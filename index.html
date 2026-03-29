@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BlackLetter Memos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1 class="site-title">BlackLetter</h1>
+    <p class="site-subtitle">your scriptorium of thoughts</p>
+  </header>
+
+  <main>
+    <div class="toolbar">
+      <button id="btn-new" class="btn-primary">+ New Memo</button>
+    </div>
+
+    <div id="memo-grid" class="memo-grid"></div>
+  </main>
+
+  <!-- Modal for create / edit -->
+  <div id="modal-overlay" class="modal-overlay hidden">
+    <div class="modal">
+      <div class="modal-header">
+        <h2 id="modal-title">New Memo</h2>
+        <button id="modal-close" class="modal-close" aria-label="Close">&times;</button>
+      </div>
+      <input id="memo-title-input" class="memo-title-input" type="text" placeholder="Title (optional)" maxlength="80" />
+      <textarea id="memo-body-input" class="memo-body-input" placeholder="Write thy thoughts here…"></textarea>
+      <div class="modal-footer">
+        <button id="btn-save" class="btn-primary">Save</button>
+        <button id="btn-cancel" class="btn-secondary">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Confirm delete dialog -->
+  <div id="confirm-overlay" class="modal-overlay hidden">
+    <div class="modal modal--small">
+      <p class="confirm-text">Destroy this memo?</p>
+      <div class="modal-footer">
+        <button id="btn-confirm-delete" class="btn-danger">Destroy</button>
+        <button id="btn-confirm-cancel" class="btn-secondary">Spare it</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
